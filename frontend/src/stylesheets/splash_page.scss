@@ -1,0 +1,145 @@
+.vsc-initialized {
+  background: linear-gradient(
+    270deg,
+    270deg,
+    #eca7a7,
+    #ecbaa7,
+    #ecc3a7,
+    #eccca7,
+    #ecdea7,
+    #e4eca7,
+    #d5eca7,
+    #c3eca7,
+    #b1eca7,
+    #a7ecaa,
+    #a7ecb3,
+    #a7ecc5,
+    #a7ecd4,
+    #a7ece3,
+    #a7dfec,
+    #a7caec,
+    #a7b8ec,
+    #a7a8ec,
+    #bba7ec,
+    #caa7ec,
+    #dca7ec,
+    #eca7e9,
+    #eca7dd,
+    #eca7cb,
+    #eca7bf,
+    #eca7a7,
+    #eca7a7
+  );
+  background-size: 3000% 3000%;
+  -webkit-animation: loginSplash 10s ease infinite;
+  -moz-animation: loginSplash 10s ease infinite;
+  -o-animation: loginSplash 10s ease infinite;
+  animation: loginSplash 10s ease infinite;
+}
+@-webkit-keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.splash-wrapper {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // width: 100%;
+  // height: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.splash-container-1 {
+  height: 100vh;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.banana {
+  // border: 2px solid white;
+  width: 100%;
+  height: 200px;
+  // border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+  // fix this positioning
+  color: white;
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
+  z-index: 0;
+  position: absolute;
+  border-left: none;
+  border-right: none;
+  // border: 1px solid black;
+  // box-shadow: 0 1px 8px 0 var(--container-color), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.banana h1:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  // color: black;
+}
+
+.banana h1 {
+  font-weight: 400;
+  font-size: 62px;
+  align-self: center;
+}
