@@ -1,8 +1,7 @@
 import React from 'react';
 import ChatBox from './chat_box_container';
-import "./dashboard.css"
+ 
 class DashBoard extends React.Component{
-   
    constructor(props){
       super(props)
    }

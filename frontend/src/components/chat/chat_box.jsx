@@ -1,8 +1,6 @@
 import React from "react"
 import io from "socket.io-client";
 import moment from "moment";
-import './chat_box.css';
-
 
 class ChatBox extends React.Component{
   constructor(props) {
