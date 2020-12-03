@@ -23,11 +23,11 @@ class ChatBox extends React.Component{
     this.socket.on("Broadcast Message", theMessage =>{
       console.log(theMessage);
       // debugger;
+
+      //how do I make sure a message only goes to one room?
+      
       this.props.afterMessageSent(theMessage);
-      // this.setState({
-      //   messages: 
-      // })
-    })
+     })
     // debugger;
   }
 
@@ -42,53 +42,49 @@ class ChatBox extends React.Component{
     })
   }
 
-  submitMessage(e){
+  submitMessage(e) {
     e.preventDefault();
     //add room id to props
     let username = this.props.user.username;
+    let userId = this.props.user.id;
+    let room = this.props.room;
     // debugger;
     console.log(username);
     let timestamp = moment().format('LT');
     let message = this.state.chatMessage;
-
+    // debugger;
     this.socket.emit("Create Message", {
       message,
       timestamp,
       username,
+      userId,
+      room
       //add room id here
     })
-
+    // debugger;
     this.setState({
       chatMessage: "",
     })
 
   }
 
-  render(){
+  render() {
     let messages = this.props.messages.data || [];
-    debugger;
-    
-    return(
-        <div className="chatbox-container">
-          <h2 className="room-name">Room Name</h2>
-        
+  
+    return (
+      <div className="chatbox-container">
+        <h1>Chat Window</h1>
+        <form onSubmit={this.submitMessage}>
+
+          <input type="text" value={this.state.chatMessage} onChange={this.handleChange} />
+        </form>
         <ul>
           {messages.map(msg => (
-            <div>
-                <p className="message" key={msg._id}>
-                {msg.sender.username}:  {msg.message}
-                </p>
-                 
-            </div>
+            <li key={msg._id}>{msg.sender.username} says: {msg.message}</li>
           ))}
 
         </ul>
-        <form onSubmit={this.submitMessage}>
-
-          <input className="send" type="text" value={this.state.chatMessage} onChange={this.handleChange} />
-          <button>Send</button>
-        </form>
-        </div>
+      </div>
     )
   }
 

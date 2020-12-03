@@ -18,7 +18,6 @@ const mapDispatchToProps = (dispatch) => {
       getMessages: () => dispatch(fetchMessages()),
       afterMessageSent: (msg) => {
          dispatch(afterMessageSent(msg));
-         // debugger;
       }
    }
 }

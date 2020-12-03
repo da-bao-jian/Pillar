@@ -20,7 +20,6 @@ const connect = mongoose
 const users = require("./routes/api/users");
 const messages = require("./routes/api/messages");
 const rooms = require("./routes/api/rooms");
-
 const bodyParser = require('body-parser');
 const path = require('path');
 
@@ -40,31 +39,34 @@ const Message = require("./models/Message");
 io.on("connection", socket => {
   
   socket.on("Create Message", msg => {
-    //msg ->  {message, timestamp, username}
+    //msg ->  {message, timestamp, username, room}
     
     // debugger;
     connect.then(db => {
       try {
+
         //create new message
 
 
-        let message = new Message({ message: msg.message,
-          sender: msg.userId
+        let message = new Message({ 
+                                    message: msg.message,
+                                    sender: msg.userId,
+                                    room: msg.rooom,
           });
-          debugger;
+          
           //attempt to save to database
           message.save((err, document) => {
             //record error, if any
-            debugger;
-            if(err) return res.json({ success: false, err });
             
-
+            if(err) return res.json({ success: false, err });
 
             //retrieve new message by sender???
             Message.find({ "_id": document._id })
             .populate("sender")
             .exec((err,document) => {
-              return io.emit("Broadcast Message",document);
+//added socket.join
+              socket.join(document.room);
+              return io.to(document.room).emit("Broadcast Message",document);
             })
           })
         } catch (error) {
