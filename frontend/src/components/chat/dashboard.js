@@ -9,7 +9,7 @@ class DashBoard extends React.Component{
    render(){
       return(
 
-         <div className="dash-container" style={{ backgroundImage: "linear-gradient(to right, #BA5898 , rgb(65, 152, 176))"}}> 
+         <div className="dash-container"> 
             <ChatBox/>    
             <ChatBox /> 
             <ChatBox /> 

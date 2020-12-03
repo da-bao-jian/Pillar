@@ -1,0 +1,69 @@
+.login-form-container {
+  background: linear-gradient(
+    270deg,
+    #f2bcbc,
+    #f2d7bc,
+    #f2e7bc,
+    #eef2bc,
+    #def2bc,
+    #cff2bc,
+    #bcf2be,
+    #bcf2d3,
+    #bcf2e2,
+    #bceff2,
+    #bcd7f2,
+    #bcc4f2,
+    #ccbcf2,
+    #e8bcf2,
+    #f2bcbc
+  );
+  background-size: 3000% 3000%;
+  -webkit-animation: loginSplash 30s ease infinite;
+  -moz-animation: loginSplash 30s ease infinite;
+  -o-animation: loginSplash 30s ease infinite;
+  animation: loginSplash 30s ease infinite;
+}
+@-webkit-keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes loginSplash {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

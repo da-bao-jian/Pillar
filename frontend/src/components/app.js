@@ -8,11 +8,13 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ChatBox from './chat/chat_box_container';
 import DashBoard from './chat/dashboard';
+import Splash from './splash/splash_page';
+
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/login" component={Splash} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route exact path="/chat" component={DashBoard} /> 
         <Route exact path="/" component={MainPage} />
