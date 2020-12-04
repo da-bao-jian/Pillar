@@ -1,15 +1,5 @@
 import React from "react";  
 
-const images = [
-  "https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.unsplash.com/photo-1495542779398-9fec7dc7986c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1936&q=80",
-  "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
-  "https://images.pexels.com/photos/1868676/pexels-photo-1868676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/1115251/pexels-photo-1115251.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-
-]
-
 class SplashPage extends React.Component {
   constructor(props) {
     super(props);
@@ -51,7 +41,7 @@ class SplashPage extends React.Component {
     return (
       <div className="splash-wrapper">
         <div className="splash-container-1">
-          <div className="banana">
+          <div className="logo-button">
             <h1 onClick={this.loginModal}>PILLR</h1>
           </div>
         </div>

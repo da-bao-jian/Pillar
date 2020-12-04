@@ -78,14 +78,12 @@ class SessionForm extends React.Component {
             onChange={this.update('email')}
           />
         {formType === 'Sign up' ? (
-        <div className='signup-form-additionals'>
             <input type='text'
               className="session-form-input"
               value={this.state.username}
               placeholder="Username"
               onChange={this.update('username')}
             />
-        </div>
         ) : null}
           <input type='password'
             className="session-form-input"
@@ -95,14 +93,12 @@ class SessionForm extends React.Component {
             onChange={this.update('password')}
           />
         {formType === 'Sign up' ? (
-        <div className='signup-form-additionals'> 
             <input type='password'
               className="session-form-input"
               value={this.state.password2}
               placeholder="Confirm password"
               onChange={this.update('password2')}
             />
-        </div>
         ) : null}
       </div>
     );
@@ -117,26 +113,31 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form-container">
-        <h1>Communication Made Better by PILLR</h1>
-        <div className="close-session-form-icon-container" onClick={closeModal}>
-          <i className="fas fa-times" id="close-session-form-icon"></i>
-        </div>
-        <form className="session-form" onSubmit={this.handleSubmit}>
-          {/* <div className="session-form-icon-container">
-            <i className="fab fa-weebly" id="session-form-icon"></i>
-          </div> */}
-          <div className="session-form-inputs">
-            {sessionFormInputs}
-            {this.renderErrors()}
-            <input type="submit"
-              className="session-form-button-input"
-              id="form-action"
-              value={formType}
-            />
-            <div className="session-form-spacer"></div>
-            {switchFormLink}
+        <div className="session-form-subcontainer" >
+          <h1>Communication Made Better by PILLR</h1>
+          <div className="close-session-form-icon-container" >
+            <i className="fas fa-times" id="close-session-form-icon"  onClick={closeModal}></i>
           </div>
-        </form>
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            {/* <div className="session-form-icon-container">
+              <i className="fab fa-weebly" id="session-form-icon"></i>
+            </div> */}
+              <div className="session-form-inputs">
+                {sessionFormInputs}
+                {this.renderErrors()}
+              </div>
+            <div className="session-form-button-container">
+                <input type="submit"
+                  className="session-form-button-input"
+                  id="form-action"
+                  value={formType}
+                />
+                <span className="session-form-spacer">{switchFormLink}</span>
+                
+            </div>
+            
+          </form>
+        </div>
       </div>
     );
   }
