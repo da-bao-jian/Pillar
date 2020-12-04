@@ -1,4 +1,4 @@
-import { getRoom, getRooms, deleteRoomUtil, updateRoomUtil, createRoomUtil } from '../util/room_api_util';
+import { getRoom, getRooms, deleteRoomUtil, updateRoomUtil, createRoomUtil, getUserRooms } from '../util/room_api_util';
 
 export const RECEIVE_ROOMS = "RECEIVE_ROOMS";
 export const RECEIVE_ROOM = "RECEIVE_ROOM";
@@ -47,9 +47,15 @@ export const editRoom = room => dispatch => (
     .then(room => dispatch(updateRoom(room)))
 )
 
+export const fetchUserRooms = userId => dispatch =>{
+  debugger;
+ return getUserRooms(userId)
+    .then(rooms => dispatch(receiveRooms(rooms)))
+}
+
 //we won't need this....
 export const fetchRooms = () => dispatch => (
   getRooms()
-    .then(rooms => dispatch(receiveRoom(rooms)))
+    .then(rooms => dispatch(receiveRooms(rooms)))
     .catch(err => console.log(err))
 );

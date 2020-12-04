@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchRoom, createRoom, removeRoom, editRoom } from '../../actions/room_actions';
+import { fetchRoom, createRoom, removeRoom, editRoom, fetchRooms } from '../../actions/room_actions';
 import DashBoard from './dashboard';
 
 
@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch) => {
     createRoom: (room) => dispatch(createRoom(room)),
     deleteRoom: (roomId) => dispatch(removeRoom(roomId)),
     editRoom: (room) => dispatch(editRoom(room)),
+    fetchRooms: () => dispatch(fetchRooms())
     };
 };
 

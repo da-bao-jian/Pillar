@@ -4,6 +4,22 @@ export const getRooms = () => {
   return axios.get('/api/rooms/')
 };
 
+export const getUserRooms = userId => {
+  
+  let filter = {
+    where: {
+      users: userId
+  }}
+  debugger;
+  // return axios.get(`/api/rooms/${JSON.stringify(filter)}`)
+  return axios.get(`/api/rooms/${JSON.stringify(filter)}`)
+  // , {
+  //   params: {
+  //     "users": userId,
+  //   }})
+}
+
+
 export const createRoomUtil = (room) => {
   return axios.post('api/rooms/', room)
 }

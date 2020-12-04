@@ -1,4 +1,5 @@
 
+const { ObjectId } = require('bson');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -12,7 +13,7 @@ router.get("/test", (req, res) => res.json({ msg: "This is the rooms route" }));
 
 //retrieve all rooms
 router.get('/', (req, res) => {
-  console.log("this is the rooms route");
+  console.log("this is the all rooms route");
   Room.find()
     .populate('admin')
     .then(rooms => {
@@ -25,8 +26,31 @@ router.get('/', (req, res) => {
 
 //retrieve single room
 router.get('/:roomId', (req, res) => {
-  console.log("this is the room route");
-  Room.findById(req.params.roomId)
+  console.log("this is the single room route");
+  debugger
+  // console.log(req)
+  // console.log(res)
+  // $elemMatch  
+  // Room.aggregate([{ $match: { "users._id": ObjectId("5fc9193d0cb8b668f49456cd") } }]).then(room => {
+  // Room.where({ "user.id": ObjectId("5fc9193d0cb8b668f49456cd") }).then(room => {
+  // { 'subjects': { "$elemMatch": { 'name': 'Math' } } }
+  // Room.find( {'users'  : "5fc9193d0cb8b668f49456cd"} ).then(room=>{
+  //   debugger
+  // })
+  Room.find(req.params.roomId)
+    .populate('admin')
+    .then(room => {
+      debugger;
+      res.json(room);
+      //console.log(messages);
+    })
+    .catch(err => res.status(404).json({ noroomfound: 'No room found' }));
+});
+
+router.get('/:userId', (req, res) => {
+  console.log("this is the user rooms route");
+  
+  Room.findById(req.params.userId)
     .populate('admin')
     .then(room => {
       res.json(room);
@@ -34,6 +58,7 @@ router.get('/:roomId', (req, res) => {
     })
     .catch(err => res.status(404).json({ noroomfound: 'No room found' }));
 });
+
 
 
 //create room
