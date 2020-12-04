@@ -16,22 +16,6 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.formType === 'Sign up') {
-  //     if (nextProps.signedIn === true) {
-  //       this.props.history.push('/pillar');
-  //     }
-  //     this.setState({errors: nextProps.errors})
-  //   }
-  // }
-
-  // componentDidUpdate(prevProps){
-  //   if (this.props.formType === 'Sign up') {      
-  //     if(this.props.authenticated !== prevProps.authenticated){
-  //       this.setState({is_authenticated: true})
-  //     }
-  // }
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -118,15 +102,12 @@ class SessionForm extends React.Component {
             <i className="fas fa-times" id="close-session-form-icon"  onClick={closeModal}></i>
           </div>
           <form className="session-form" onSubmit={this.handleSubmit}>
-            {/* <div className="session-form-icon-container">
-              <i className="fab fa-weebly" id="session-form-icon"></i>
-            </div> */}
               <div className="session-form-inputs">
                 {sessionFormInputs}
                 {this.renderErrors()}
               </div>
             <div className="session-form-button-container">
-            <h1>Communication Made Better by PILLR</h1>
+              <h1>Communication Made Better by PILLR</h1>
                 <input type="submit"
                   className="session-form-button-input"
                   id="form-action"

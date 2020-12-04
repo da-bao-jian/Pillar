@@ -19,20 +19,22 @@ class ChatBox extends React.Component{
     /// this may be an issue when we push to Heroku! How to dynamically set the server?
     let server = "http://localhost:5000";
     this.props.getMessages();
+    
     this.socket = io(server);
+    //debugger;
     this.socket.on("Broadcast Message", theMessage =>{
       console.log(theMessage);
-      // debugger;
-
-      //how do I make sure a message only goes to one room?
-      
+      // ;
       this.props.afterMessageSent(theMessage);
-     })
-    // debugger;
+      // this.setState({
+      //   messages: 
+      // })
+    })
+    // ;
   }
 
   // componentDidUpdate(prevProps){
-  //   debugger;
+  //   ;
     
   // }
 
@@ -42,49 +44,66 @@ class ChatBox extends React.Component{
     })
   }
 
-  submitMessage(e) {
+  submitMessage(e){
     e.preventDefault();
     //add room id to props
     let username = this.props.user.username;
-    let userId = this.props.user.id;
-    let room = this.props.room;
-    // debugger;
+    // ;
     console.log(username);
     let timestamp = moment().format('LT');
     let message = this.state.chatMessage;
-    // debugger;
+    //debugger;
     this.socket.emit("Create Message", {
       message,
       timestamp,
       username,
-      userId,
-      room
+      room: this.props.room,
+      user: this.props.user.id
       //add room id here
     })
-    // debugger;
+
     this.setState({
       chatMessage: "",
     })
 
   }
 
-  render() {
-    let messages = this.props.messages.data || [];
-  
-    return (
-      <div className="chatbox-container">
-        <h1>Chat Window</h1>
-        <form onSubmit={this.submitMessage}>
+  render(){
+    let messages  = [];
+    
+    if (this.props.messages.data) messages =this.props.messages.data.filter(message => (message.room === this.props.room));
+    ;
+    return(
+        <div className="chatbox-container">
+            <h1 className="room-name">Room Name</h1>
+          
+            <ul>
+              {messages.map(msg => (
 
-          <input type="text" value={this.state.chatMessage} onChange={this.handleChange} />
-        </form>
-        <ul>
-          {messages.map(msg => (
-            <li key={msg._id}>{msg.sender.username} says: {msg.message}</li>
-          ))}
+                msg.username? (  
+                
+                <div>
+                    <p className="message" key={msg._id}>
+                    {msg.username}:  {msg.message}
+                    </p>
+                    
+                </div>
+                ): (
+                    <div>
+                      <p className="message" key={msg._id}>
+                        {msg.sender.username}:{msg.message}
+                      </p>
 
-        </ul>
-      </div>
+                    </div>
+                )
+              ))}
+
+            </ul>
+          <div className="chatbox-input-form" onSubmit={this.submitMessage}>
+            <input className="send" type="text" value={this.state.chatMessage} onChange={this.handleChange} />
+            <button>Send</button>
+          </div>
+        </div>
     )
   }
 

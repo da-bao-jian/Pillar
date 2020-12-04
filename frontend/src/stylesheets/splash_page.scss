@@ -31,8 +31,8 @@
   );
   background-size: 5400% 5400%;
 
-  -webkit-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
+  -webkit-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
@@ -59,11 +59,6 @@
 }
 
 .splash-wrapper {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // width: 100%;
-  // height: auto;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -122,7 +117,7 @@
   opacity: 0.8;
   // fix this positioning
   color: white;
-  font-family: monospace;
+  font-family: "Nunito Sans", sans-serif;
   letter-spacing: 1px;
   z-index: 0;
   position: absolute;
@@ -140,29 +135,7 @@
 }
 
 .logo-button h1 {
-  font-weight: 400;
-  font-size: 62px;
+  font-weight: bolder;
+  font-size: 100px;
   align-self: center;
-}
-
-.splash-developer-container {
-  display: flex;
-  //   width: 100%;
-  // height: 100%;
-  // background-color: lightslategray;
-  padding-top: 30px;
-}
-
-.splash-developer-container > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.splash-lisa-developer,
-.splash-chris-developer,
-.splash-kevin-developer,
-.splash-stephen-developer {
-  // background-color:  lightslategray;
-  width: 25%;
-  //   height: 100%;
 }

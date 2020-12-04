@@ -32,7 +32,7 @@
   //   }
   & input {
     background: rgba(255, 255, 255, 0.2);
-    padding: 1em 0;
+    padding: 1em 0.8em;
     height: auto;
     width: 65%;
     border-radius: 5px;
@@ -88,7 +88,7 @@
 }
 
 ::placeholder {
-  font-family: monospace;
+  font-family: "Nunito Sans", sans-serif;
   color: white;
   padding-left: 5px;
   font-size: large;
@@ -105,19 +105,23 @@
   color: rgba(255, 255, 255, 0.9);
   font-weight: 300;
   display: flex;
+  align-items: flex-end;
 }
 
 .session-form-button-container > input {
   box-sizing: content-box;
-  width: 6em;
+  width: fit-content;
   font-family: sans-serif;
   font-weight: 700;
   color: white;
   align-self: flex-end;
+  margin: 0;
+  margin-right: 0.2em;
 }
 
 .session-form-button-container > input:hover {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .session-form-spacer {
@@ -136,22 +140,50 @@
 
 .session-form-spacer:hover {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .session-form-button-container h1 {
-  font-family: monospace;
+  font-family: "Nunito Sans", sans-serif;
   text-align: left;
-  padding-left: 1em;
+  padding-left: 0.5em;
   font-size: large;
   border-left: 0;
   margin-left: 0;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   padding-bottom: 0;
   box-sizing: content-box;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 2.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
 
 input {
-  font-family: monospace;
+  font-family: "Nunito Sans", sans-serif;
   color: white;
   padding-left: 5px;
   font-size: large;
@@ -160,5 +192,5 @@ input {
 
 input:focus {
   outline: none;
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
 }
