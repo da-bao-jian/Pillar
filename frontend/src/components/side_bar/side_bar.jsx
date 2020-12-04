@@ -8,7 +8,6 @@ class SideBar extends React.Component {
       this.state = {
          title: "",
          admin: this.props.user.id,
-         users: this.props.user.id,
          rooms: [],
          show_rooms: false,
       }
@@ -21,28 +20,28 @@ class SideBar extends React.Component {
    }
    
    componentDidMount(){
-      //  
+       
       this.props.fetchRooms()
          .then(rooms => {
-            // debugger
+            debugger
             this.setState({ rooms: rooms.rooms.data})
          })
           
       let userId = this.props.user.id
       this.props.fetchUserRooms(userId)
          .then(rooms => {
-            //  
+             
             this.setState({ userRooms: rooms.rooms.data })
          }, errors =>{
-            //  
+             
          })
    }
    
    handleSubmit(e) {
       e.preventDefault();
       debugger
-      let room = { title: this.state.title, admin: this.state.admin, users: this.props.user.id};
-      //  
+      let room = { title: this.state.title, admin: this.state.admin};
+       
 
       this.props.createRoom(room)
    }

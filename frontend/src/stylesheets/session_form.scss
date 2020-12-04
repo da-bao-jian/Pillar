@@ -19,7 +19,7 @@
   height: 35%;
   border-radius: 0.2em;
   position: relative;
-  top: 100px;
+  top: 70px;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
   // &__messages {
   //   &:nth-of-type(odd) .chatbox__messages__user-message--ind-message {
@@ -110,13 +110,15 @@
 
 .session-form-button-container > input {
   box-sizing: content-box;
+  width: -moz-fit-content;
   width: fit-content;
   font-family: sans-serif;
   font-weight: 700;
   color: white;
   align-self: flex-end;
   margin: 0;
-  margin-right: 0.2em;
+  margin-right: 0.15em;
+  border-radius: initial;
 }
 
 .session-form-button-container > input:hover {
@@ -124,21 +126,23 @@
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.session-form-spacer {
+.switch-form-link {
   width: 6em;
-  height: 3.3em;
   font-family: sans-serif;
-  font-weight: 700;
+  font-weight: bold;
   background: rgba(255, 255, 255, 0.2);
   margin: 0.5em, 1em;
   border-radius: 5px;
   text-align: center;
   vertical-align: middle;
-  // display: inline-block;
   align-self: center;
+  padding: 1.25em;
+  width: fit-content;
+  font-size: unset;
+  border-radius: initial;
 }
 
-.session-form-spacer:hover {
+.switch-form-link:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5) !important;
 }

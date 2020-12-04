@@ -1,29 +1,28 @@
 import { connect } from 'react-redux';
-import { fetchMessages, afterMessageSent } from '../../actions/message_actions';
+import { fetchRoom, createRoom, removeRoom, editRoom, fetchRooms } from '../../actions/room_actions';
 import DashBoard from './dashboard';
 
 
 
 const mapStateToProps = (state) => {
-   debugger;
-   return {
-      user: state.session.user,
-      messages: state.messages,
-      // errors: state.errors.session
-   };
+  return {
+    user: state.session.user,
+    rooms: state.rooms,
+    // errors: state.errors.session
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-   return {
-      getMessages: () => dispatch(fetchMessages()),
-      afterMessageSent: (msg) => {
-         dispatch(afterMessageSent(msg));
-         // debugger;
-      }
-   }
-}
+  return {
+    getRoom: (roomId) => dispatch(fetchRoom(roomId)),
+    createRoom: (room) => dispatch(createRoom(room)),
+    deleteRoom: (roomId) => dispatch(removeRoom(roomId)),
+    editRoom: (room) => dispatch(editRoom(room)),
+    fetchRooms: () => dispatch(fetchRooms())
+    };
+};
 
 export default connect(
-   mapStateToProps,
-   mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(DashBoard);

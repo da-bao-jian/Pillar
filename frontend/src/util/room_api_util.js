@@ -1,8 +1,48 @@
 import axios from 'axios';
 
 export const getRooms = () => {
-  return axios.get('/api/rooms')
+  return axios.get('/api/rooms/')
 };
+
+export const getUserRooms = userId => {
+  
+  let filter = {
+    where: {
+      users: userId
+  }}
+   
+  // return axios.get(`/api/rooms/${JSON.stringify(filter)}`)
+  return axios.get(`/api/rooms/${JSON.stringify(filter)}`)
+  // , {
+  //   params: {
+  //     "users": userId,
+  //   }})
+}
+
+
+export const createRoomUtil = (room) => {
+  return axios.post('api/rooms/', room)
+}
+
 export const getRoom = (roomId) => {
   return axios.get(`/api/rooms/${roomId}`)
 };
+
+export const deleteRoomUtil = (roomId) => {
+  return axios.post(`/api/rooms/${roomId}/delete`)
+}
+
+export const updateRoomUtil = (room) => {
+  return axios.post(`/api/rooms/${room.id}`, room)
+}
+// /:roomId
+
+// export const writeTweet = data => {
+//   return axios.post('/api/tweets/', data)
+// }
+
+// axios.delete('url', { data: payload }).then(
+//   // Observe the data keyword this time. Very important
+//   // payload is the request body
+//   // Do something
+// )

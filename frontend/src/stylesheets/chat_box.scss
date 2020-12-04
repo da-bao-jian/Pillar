@@ -14,7 +14,7 @@
   position: relative;
   top: 100px;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
-  & p {
+  & li {
     background: rgba(255, 255, 255, 0.2);
     padding: 1em 0;
     height: auto;
@@ -28,6 +28,7 @@
     padding-left: 7px;
     padding-right: 7px;
     font-size: large;
+    display: -webkit-box;
   }
   h1 {
     margin-top: 0.5em;
@@ -72,9 +73,9 @@
   background: rgba(255, 255, 255, 0.06);
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   border: none;
-  width: 75%;
+  width: 68%;
   padding: 1.2em;
   outline: none;
   color: rgba(255, 255, 255, 0.9);
