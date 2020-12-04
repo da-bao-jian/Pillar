@@ -116,37 +116,49 @@
   align-self: flex-end;
 }
 
-// form-action {
-//   box-sizing: content-box;
-//   width: 6em;
-//   font-family: sans-serif;
-//   font-weight: 700;
-//   color: white;
-// }
-// .session-form-subcontainer input {
-//   background: rgba(255, 255, 255, 0.2);
-//   padding: 1em 0;
-//   height: auto;
-//   border-radius: 5px;
-//   margin: 0.5em 1em;
-//   overflow: auto;
-//   border: none;
-// }
-// user agent stylesheet
-// input[type="submit" i] {
-//   appearance: push-button;
-//   user-select: none;
-//   white-space: pre;
-//   align-items: flex-start;
-//   text-align: center;
-//   cursor: default;
-//   -webkit-writing-mode: horizontal-tb !important;
-//   text-rendering: auto;
-//   letter-spacing: normal;
-//   word-spacing: normal;
-//   text-transform: none;
-//   text-indent: 0px;
-//   text-shadow: none;
-//   display: inline-block;
-//   -webkit-rtl-ordering: logical;
-//   font: 400 13.3333px Arial;
+.session-form-button-container > input:hover {
+  cursor: pointer;
+}
+
+.session-form-spacer {
+  width: 6em;
+  height: 3.3em;
+  font-family: sans-serif;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0.5em, 1em;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  // display: inline-block;
+  align-self: center;
+}
+
+.session-form-spacer:hover {
+  cursor: pointer;
+}
+
+.session-form-button-container h1 {
+  font-family: monospace;
+  text-align: left;
+  padding-left: 1em;
+  font-size: large;
+  border-left: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  box-sizing: content-box;
+}
+
+input {
+  font-family: monospace;
+  color: white;
+  padding-left: 5px;
+  font-size: large;
+  margin: 2em;
+}
+
+input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}

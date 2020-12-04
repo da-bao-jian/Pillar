@@ -114,7 +114,6 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <div className="session-form-subcontainer" >
-          <h1>Communication Made Better by PILLR</h1>
           <div className="close-session-form-icon-container" >
             <i className="fas fa-times" id="close-session-form-icon"  onClick={closeModal}></i>
           </div>
@@ -127,6 +126,7 @@ class SessionForm extends React.Component {
                 {this.renderErrors()}
               </div>
             <div className="session-form-button-container">
+            <h1>Communication Made Better by PILLR</h1>
                 <input type="submit"
                   className="session-form-button-input"
                   id="form-action"
