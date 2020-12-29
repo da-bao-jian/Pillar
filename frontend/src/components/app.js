@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Modal from "./modal/modal";
 import MainPage from './main/main_page';
 import ChatBox from './chat/chat_box_container';
-import DashBoard from './chat/dashboard';
+import DashBoard from './chat/dashboard_container';
 import SplashPageContainer from './splash/splash_page_container';
 import SideBar from './chat/side_bar_container';
 
@@ -22,7 +22,7 @@ const App = () => (
 ======= */}
       {/* <Route exact path="/" component={MainPage} /> */}
       <AuthRoute exact path="/" component={SplashPageContainer} />
-      <Route exact path="/chat" component={DashBoard} />
+      <ProtectedRoute exact path="/chat" component={DashBoard} />
     </Switch>
   </div>
 )
