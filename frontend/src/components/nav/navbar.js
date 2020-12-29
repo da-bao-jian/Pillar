@@ -24,34 +24,15 @@ class NavBar extends React.Component {
             </div>
         );
       } else {
-        let current_path = this.props.location.pathname.split('/');
-        if(current_path.includes('login') && current_path.length>1){
           return (
-            <div>
-                <Link to={'/signup'}>Signup</Link>
-            </div>
+            null
           )
-        } else if (current_path.includes('signup') && current_path.length>1){
-          return (
-              <div>
-                <Link to={'/login'}>Login</Link>
-              </div>
-          );
-        } else {
-            return (
-              <div>
-                  <Link to={'/signup'}>Signup</Link>
-                  <Link to={'/login'}>Login</Link>
-              </div>
-          );
-        }
       }
   }
 
   render() {
       return (
         <div>
-          <h1>Pillar</h1>
             { this.getLinks() }
         </div>
       );
