@@ -1,10 +1,6 @@
 import React from "react"
 import io from "socket.io-client";
 import moment from "moment";
-import UserList  from './user_list.js';
-import './chatbox.css'
-import Picker from 'emoji-picker-react';
-import Giphy from "../giphy/giphy_container"
 
 class ChatBox extends React.Component{
   constructor(props) {
@@ -169,7 +165,6 @@ class ChatBox extends React.Component{
       </div>
     )
   }
-
 }
 
 
